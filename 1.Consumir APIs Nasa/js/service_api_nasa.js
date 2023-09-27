@@ -1,12 +1,13 @@
 const apiKey = 'pf8tFiHzCDstCONHBOInUlANAdl74nsuwMsMauK9';
 const sol = 1000; // El número de sol que deseas consultar
 
-// URL del API de la NASA
+
 const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${apiKey}`;
+const apiLocal = "js/data.json"
 
 // Realizar una solicitud GET utilizando Fetch API
 async function obtenerResultados() {
-    const resultados = await fetch(apiUrl);
+    const resultados = await fetch(apiLocal);           //AQUI PODRIAMOS ELEGIR ENTRE LA API LOCAL O LA WEB
     let json = resultados.json();
     console.log(json);
     return await json;
